@@ -23,9 +23,22 @@ class MyHashTable:
                     return v
         return None
 
+    def keys(self):
+        keys_array = list()
+
+        # Loop through all the data
+        for cell in self.data:
+            if cell:
+                # Loop through the collisions in one cell
+                for key, value in cell:
+                    keys_array.append(key)
+        return keys_array if keys_array else None
+
 
 my_hash = MyHashTable(10)
 my_hash.set('grapes', 10000)
+my_hash.set('grapess', 50000)
 my_hash.set('apples', 538)
-print(my_hash.get('grapes'))
-print(my_hash.get('apples'))
+my_hash.set('oranges', 2)
+print(my_hash.data)
+print(my_hash.keys())
