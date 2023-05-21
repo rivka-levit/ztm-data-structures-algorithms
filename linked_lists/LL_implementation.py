@@ -76,6 +76,25 @@ class LinkedList:
         self.length += 1
         return True
 
+    def remove(self, index):
+        # Check input
+        if any((self.length == 0, index >= self.length, index < 0)):
+            return False
+
+        # Remove the first node
+        if index == 0:
+            self.head = self.head.next
+
+        # Remove inside or at the end
+        else:
+            temp = self.__traverse_to_index(index-1)
+            if self.tail == temp.next:
+                self.tail = temp
+            temp.next = temp.next.next
+
+        self.length -= 1
+        return True
+
 
 my_linked_list = LinkedList(10)
 my_linked_list.append(5)
@@ -85,5 +104,13 @@ my_linked_list.print_ll()
 my_linked_list.prepend(1)
 my_linked_list.print_ll()
 my_linked_list.insert(2, 3)
+my_linked_list.print_ll()
+my_linked_list.remove(2)
+my_linked_list.print_ll()
+my_linked_list.remove(0)
+my_linked_list.print_ll()
+my_linked_list.remove(2)
+my_linked_list.print_ll()
+my_linked_list.remove(5)
 my_linked_list.print_ll()
 print('LL length:', my_linked_list.length)
