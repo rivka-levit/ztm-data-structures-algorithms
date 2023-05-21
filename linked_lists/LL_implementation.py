@@ -95,22 +95,38 @@ class LinkedList:
         self.length -= 1
         return True
 
+    def reverse(self):
+        if self.length == 0 or self.length == 1:
+            return True
+        if self.length == 2:
+            self.tail.next = self.head
+            self.head.next = None
+            self.head, self.tail = self.tail, self.head
+            return True
 
-my_linked_list = LinkedList(10)
-my_linked_list.append(5)
+        # Pointers to handle the references
+        before = self.head
+        after = self.head.next
+
+        # Reset all the references
+        while after:
+            current = after
+            after = current.next
+            current.next = before
+            before = current
+
+        # Update head and tail pointers
+        self.head, self.tail = self.tail, self.head
+
+        # Reference the tail
+        self.tail.next = None
+        return True
+
+
+my_linked_list = LinkedList(1)
+my_linked_list.append(10)
 my_linked_list.append(16)
+my_linked_list.append(88)
 my_linked_list.print_ll()
-
-my_linked_list.prepend(1)
+my_linked_list.reverse()
 my_linked_list.print_ll()
-my_linked_list.insert(2, 3)
-my_linked_list.print_ll()
-my_linked_list.remove(2)
-my_linked_list.print_ll()
-my_linked_list.remove(0)
-my_linked_list.print_ll()
-my_linked_list.remove(2)
-my_linked_list.print_ll()
-my_linked_list.remove(5)
-my_linked_list.print_ll()
-print('LL length:', my_linked_list.length)
