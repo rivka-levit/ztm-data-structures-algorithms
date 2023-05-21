@@ -13,10 +13,11 @@ class LinkedList:
 
     def print_ll(self):
         temp = self.head
+        print('[ll--> ', end='')
         while temp:
             print(temp.value, end=' ')
             temp = temp.next
-        print()
+        print('<--ll]')
 
     def append(self, value):
         new_node = Node(value)
