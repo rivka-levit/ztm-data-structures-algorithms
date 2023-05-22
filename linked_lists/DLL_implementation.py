@@ -118,6 +118,22 @@ class DoublyLinkedList:
         self.length -= 1
         return True
 
+    def reverse(self):
+        if self.length == 0 or self.length == 1:
+            return True
+
+        temp = self.tail
+
+        # Reverse pointers
+        while temp:
+            temp.next, temp.prev = temp.prev, temp.next
+            temp = temp.next
+
+        # Change head and tail
+        self.head, self.tail = self.tail, self.head
+
+        return True
+
 
 my_doubly_list = DoublyLinkedList(1)
 my_doubly_list.append(5)
@@ -137,4 +153,6 @@ print(my_doubly_list)
 my_doubly_list.remove(-1)
 print(my_doubly_list)
 my_doubly_list.remove(-3)
+print(my_doubly_list)
+my_doubly_list.reverse()
 print(my_doubly_list)
