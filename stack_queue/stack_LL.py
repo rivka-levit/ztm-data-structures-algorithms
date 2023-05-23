@@ -1,4 +1,8 @@
 class Node:
+
+    def __str__(self):
+        return str(self.value)
+
     def __init__(self, value):
         self.value = value
         self.next = None
@@ -20,7 +24,7 @@ class Stack:
         return result_string + 'BOTTOM'
 
     def is_empty(self):
-        return True if self.length == 0 else False
+        return self.length == 0
 
     def peek(self):
         if self.is_empty():
