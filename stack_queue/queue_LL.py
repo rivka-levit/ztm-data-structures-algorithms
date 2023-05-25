@@ -21,13 +21,24 @@ class MyQueue:
             temp = temp.next
         return f'[Q-- {", ".join(result_list)} --Q]'
 
-    def is_empty(self):
+    def is_empty(self) -> bool:
+        """
+        Return boolean value whether the list is empty or not.
+        """
         return self.length == 0
 
-    def peek(self):
+    def peek(self) -> Node:
+        """
+        Return the first node without removing it
+        from the queue.
+        """
         return self.first
 
-    def enqueue(self, value):
+    def enqueue(self, value) -> None:
+        """
+        Takes a value from the input, creates a new
+        node and appends it to the end of the queue.
+        """
         new_node = Node(value)
         if self.is_empty():
             self.first = new_node
@@ -37,10 +48,15 @@ class MyQueue:
             self.last = new_node
         self.length += 1
 
-    def deque(self):
+    def deque(self) -> Node | None:
+        """
+        Removes the first node in queue and returns it.
+        """
         if self.is_empty():
             return None
         temp = self.first
+        if self.length == 1:
+            self.last = None
         self.first = self.first.next
         self.length -= 1
         return temp
