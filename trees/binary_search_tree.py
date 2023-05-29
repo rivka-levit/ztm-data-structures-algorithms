@@ -38,7 +38,9 @@ class BinarySearchTree:
         if not self.root:
             self.root = new_node
             return True
+
         temp = self.root
+
         while temp:
             if value == temp.value:
                 return False
@@ -69,8 +71,10 @@ class BinarySearchTree:
     def remove(self, value):
         if not self.root:
             return False
+
         current = self.root
         parent = None
+
         while current:
             if value > current.value:
                 parent = current
@@ -87,7 +91,6 @@ class BinarySearchTree:
                         parent.right = current.left
                     elif parent.left == current:
                         parent.left = current.left
-
                     return True
 
                 # Option 2: Right child that doesn't have a left child
