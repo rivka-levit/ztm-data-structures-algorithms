@@ -130,4 +130,3 @@ my_little_tree.insert(30)
 print(my_little_tree)
 my_little_tree.remove(10)
 print(my_little_tree)
-
