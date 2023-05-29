@@ -14,4 +14,11 @@ class Graph:
         self.adjacency[node_1].append(node_2)
         self.adjacency[node_2].append(node_1)
 
-
+    def show_connections(self):
+        all_nodes = self.adjacency.keys()
+        for node in all_nodes:
+            node_connections = self.adjacency[node]
+            connections = ''
+            for vertex in node_connections:
+                connections += str(vertex) + ' '
+            print(f'{str(node)} --> {connections}')
