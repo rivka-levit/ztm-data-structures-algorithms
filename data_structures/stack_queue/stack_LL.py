@@ -1,12 +1,10 @@
 class Node:
-
-    def __str__(self):
-        return str(self.value)
-
     def __init__(self, value):
         self.value = value
         self.next = None
-        self.prev = None
+
+    def __str__(self):
+        return str(self.value)
 
 
 class Stack:
@@ -17,11 +15,11 @@ class Stack:
 
     def __str__(self):
         temp = self.top
-        result_string = 'TOP\n'
+        result_string = 'TOP\n\\|/\n'
         while temp:
             result_string += f'{temp.value}\n'
             temp = temp.next
-        return result_string + 'BOTTOM'
+        return result_string + '/|\\\nBOTTOM'
 
     def is_empty(self):
         return self.length == 0
@@ -61,10 +59,12 @@ class Stack:
 
 
 my_stack = Stack()
-my_stack.push(5)
-my_stack.push(8)
-my_stack.push(1)
+my_stack.push('Google')
+my_stack.push('Udemy')
+my_stack.push('Discord')
 print(my_stack)
+print()
 print(my_stack.peek())
 print(my_stack.pop())
+print()
 print(my_stack)
