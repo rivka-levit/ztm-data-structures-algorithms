@@ -41,17 +41,18 @@ def bfs_recursive(node: Node, q: deque, results: list) -> list:
     return bfs_recursive(next_node, q, results)
 
 
-my_tree = BinarySearchTree()
-my_tree.insert(9)
-my_tree.insert(4)
-my_tree.insert(6)
-my_tree.insert(20)
-my_tree.insert(170)
-my_tree.insert(15)
-my_tree.insert(1)
+if __name__ == '__main__':
+    my_tree = BinarySearchTree()
+    my_tree.insert(9)
+    my_tree.insert(4)
+    my_tree.insert(6)
+    my_tree.insert(20)
+    my_tree.insert(170)
+    my_tree.insert(15)
+    my_tree.insert(1)
 
-queue = deque()
-visited = list()
+    queue = deque()
+    visited = list()
 
-print(bfs_iterative(my_tree))
-print(bfs_recursive(my_tree.root, queue, visited))
+    print(bfs_iterative(my_tree))
+    print(bfs_recursive(my_tree.root, queue, visited))
