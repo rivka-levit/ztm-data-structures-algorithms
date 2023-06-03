@@ -111,10 +111,7 @@ class BinarySearchTree:
                     parent = left_most
                     left_most = left_most.left
                 current.value, left_most.value = left_most.value, current.value
-                if left_most.right:
-                    parent.left = left_most.right
-                else:
-                    parent.left = None
+                parent.left = left_most.right
                 return True
 
 
