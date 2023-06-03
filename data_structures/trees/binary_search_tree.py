@@ -118,14 +118,15 @@ class BinarySearchTree:
                 return True
 
 
-my_little_tree = BinarySearchTree()
-my_little_tree.insert(9)
-my_little_tree.insert(4)
-my_little_tree.insert(6)
-my_little_tree.insert(20)
-my_little_tree.insert(170)
-my_little_tree.insert(15)
-my_little_tree.insert(1)
-print(my_little_tree)
-my_little_tree.remove(9)
-print(my_little_tree)
+if __name__ == '__main__':
+    my_little_tree = BinarySearchTree()
+    my_little_tree.insert(9)
+    my_little_tree.insert(4)
+    my_little_tree.insert(6)
+    my_little_tree.insert(20)
+    my_little_tree.insert(170)
+    my_little_tree.insert(15)
+    my_little_tree.insert(1)
+    print(my_little_tree)
+    my_little_tree.remove(9)
+    print(my_little_tree)
