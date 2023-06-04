@@ -17,8 +17,12 @@ def pre_order_traverse(node: Node, visited: list) -> None:
     pre_order_traverse(node.right, visited)
 
 
-def post_order_traverse():
-    pass
+def post_order_traverse(node: Node, visited: list) -> None:
+    if not node:
+        return
+    post_order_traverse(node.left, visited)
+    post_order_traverse(node.right, visited)
+    visited.append(node.value)
 
 
 if __name__ == '__main__':
@@ -32,5 +36,5 @@ if __name__ == '__main__':
     my_tree.insert(1)
 
     results = list()
-    pre_order_traverse(my_tree.root, results)
+    post_order_traverse(my_tree.root, results)
     print(results)
