@@ -9,11 +9,15 @@ def in_order_traverse(node: Node, visited: list) -> None:
     in_order_traverse(node.right, visited)
 
 
+def pre_order_traverse(node: Node, visited: list) -> None:
+    if not node:
+        return
+    visited.append(node.value)
+    pre_order_traverse(node.left, visited)
+    pre_order_traverse(node.right, visited)
+
+
 def post_order_traverse():
-    pass
-
-
-def pre_order_traverse():
     pass
 
 
@@ -28,5 +32,5 @@ if __name__ == '__main__':
     my_tree.insert(1)
 
     results = list()
-    in_order_traverse(my_tree.root, results)
+    pre_order_traverse(my_tree.root, results)
     print(results)
