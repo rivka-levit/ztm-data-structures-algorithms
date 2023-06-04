@@ -2,35 +2,50 @@ from data_structures.trees.binary_search_tree import Node, BinarySearchTree
 
 
 def in_order_traverse(node: Node, visited: list = None) -> None | list:
-    if not node:
+    if not node:  # Base case
         return
+
+    # Create list when calling for the first time
     if visited is None:
         visited = list()
+
+    # Recursive case
     in_order_traverse(node.left, visited)
     visited.append(node.value)
     in_order_traverse(node.right, visited)
+
     return visited
 
 
 def pre_order_traverse(node: Node, visited: list = None) -> None | list:
-    if not node:
+    if not node:  # Base case
         return
+
+    # Create list when calling for the first time
     if visited is None:
         visited = list()
+
+    # Recursive case
     visited.append(node.value)
     pre_order_traverse(node.left, visited)
     pre_order_traverse(node.right, visited)
+
     return visited
 
 
 def post_order_traverse(node: Node, visited: list = None) -> None | list:
-    if not node:
+    if not node:  # Base case
         return
+
+    # Create list when calling for the first time
     if visited is None:
         visited = list()
+
+    # Recursive case
     post_order_traverse(node.left, visited)
     post_order_traverse(node.right, visited)
     visited.append(node.value)
+
     return visited
 
 
