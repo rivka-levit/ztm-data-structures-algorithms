@@ -15,14 +15,17 @@ class TreeNode(object):
         self.right = right
 
 
-def sorted_array_to_bst(nums: list[int]) -> TreeNode:
+def sorted_array_to_bst(nums: list[int]) -> TreeNode | None:
+    if not nums:
+        return None
+
     mid_ind = len(nums) // 2
     root = TreeNode(nums[mid_ind])
 
-    if nums[: mid_ind]:
-        root.left = sorted_array_to_bst(nums[: mid_ind])
-    if nums[mid_ind+1:]:
-        root.right = sorted_array_to_bst(nums[mid_ind+1:])
+    root.left = sorted_array_to_bst(nums[: mid_ind])
+    root.right = sorted_array_to_bst(nums[mid_ind+1:])
 
     return root
 
+
+print(sorted_array_to_bst([-10, -3, 0, 5, 9]))
