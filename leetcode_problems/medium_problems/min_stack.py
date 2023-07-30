@@ -37,13 +37,3 @@ class MinStack(object):
 
     def get_min(self) -> int:
         return self.min_stack[-1]
-
-
-min_stack = MinStack()
-min_stack.push(-2)
-min_stack.push(0)
-min_stack.push(-3)
-print(min_stack.get_min())
-min_stack.pop()
-print(min_stack.top())
-print(min_stack.get_min())
