@@ -27,7 +27,3 @@ def str_str(haystack: str, needle: str) -> int:
         index = m.span()[0]
 
     return index
-
-
-print(find_str("hello", 'll'))
-print(str_str("hello", 'll'))
