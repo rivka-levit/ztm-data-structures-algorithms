@@ -16,6 +16,10 @@ https://leetcode.com/problems/min-stack/
 
 
 class MinStack(object):
+    """
+    Stack object that supports push, pop, top, and retrieving the minimum
+    element in constant time.
+    """
 
     def __init__(self) -> None:
         self.stack = list()
