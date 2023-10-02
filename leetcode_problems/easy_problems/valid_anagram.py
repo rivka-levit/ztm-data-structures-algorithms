@@ -8,6 +8,8 @@ https://leetcode.com/problems/valid-anagram/
 
 
 def is_anagram(s: str, t: str) -> bool:
+    """Check if the string is anagram."""
+
     chars_hash = dict()
 
     for ch in s:
