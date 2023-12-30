@@ -9,6 +9,7 @@ Full description: https://leetcode.com/problems/search-insert-position/
 """
 
 
+# My solution
 def search_insert(nums: list, target: int) -> int:
     start = 0
     end = len(nums) - 1
@@ -37,4 +38,20 @@ def search_insert(nums: list, target: int) -> int:
     return start
 
 
-print(search_insert([1, 3, 5, 6, 8, 9, 10], 19))
+# Solution from LeetCode
+def search_insert_2(nums: list, target: int) -> int:
+    left, right = 0, len(nums)
+    while left < right:
+        mid = left + (right - left) // 2
+        if nums[mid] == target:
+            return mid
+        elif nums[mid] < target:
+            left = mid + 1
+        else:
+            right = mid
+    return left
+
+
+if __name__ == '__main__':
+    print(search_insert([1, 3, 5, 6, 8, 9, 10], 19))
+    print(search_insert_2([1, 3, 5, 6, 8, 9, 10], 19))
